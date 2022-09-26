@@ -1,0 +1,15 @@
+{
+  "gitlens.remotes": [
+    {
+      "domain": "https://github.com/emilte/opportunity-solution-tree",
+      "type": "GitHub"
+    }
+  ],
+  "workbench.colorCustomizations": {
+    "titleBar.activeForeground": "#bbb",
+    "titleBar.activeBackground": "#141414",
+    "titleBar.inactiveBackground": "#141414"
+  },
+  /// devcontainer ///
+  "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+}
