@@ -1,40 +1,42 @@
-export default {
-    env: {
-        browser: true,
-        es2021: true
-    },
-    extends: [
-        'eslint:recommended',
-        'plugin:react/recommended',
-        'plugin:@typescript-eslint/recommended'
+// eslint-disable-next-line no-undef
+module.exports = {
+  env: {
+    browser: true,
+    es2021: true
+  },
+  extends: [
+    'eslint:recommended',
+    'plugin:react/recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:react/jsx-runtime'
+  ],
+  overrides: [
+  ],
+  parser: '@typescript-eslint/parser',
+  parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module'
+  },
+  plugins: [
+    'react',
+    '@typescript-eslint'
+  ],
+  rules: {
+    indent: [
+      'error', 
+      2
     ],
-    overrides: [
+    'linebreak-style': [
+      'error',
+      'unix'
     ],
-    parser: '@typescript-eslint/parser',
-    parserOptions: {
-        ecmaVersion: 'latest',
-        sourceType: 'module'
-    },
-    plugins: [
-        'react',
-        '@typescript-eslint'
+    quotes: [
+      'error',
+      'single'
     ],
-    rules: {
-        indent: [
-            'error', 
-            4
-        ],
-        'linebreak-style': [
-            'error',
-            'unix'
-        ],
-        quotes: [
-            'error',
-            'single'
-        ],
-        semi: [
-            'error',
-            'always'
-        ]
-    }
+    semi: [
+      'error',
+      'always'
+    ]
+  }
 };
