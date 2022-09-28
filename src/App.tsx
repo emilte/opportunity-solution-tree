@@ -1,24 +1,40 @@
+import { FieldSet, Record } from 'airtable';
+import { useEffect, useState } from 'react';
+import { getData } from './api';
 import './App.css';
-import logo from './logo.svg';
+
 
 function App() {
+
+  const [data, setData] = useState<Record<FieldSet> | undefined>(undefined);
+
+  useEffect(() => {
+    getData().then((data)=>setData(data));
+  }, []);
+
+  if (!data) {
+    return <></>;
+  }
+  
+  const d = JSON.parse(data?.fields.data as string);
+  console.log(d);
+  
+  
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className='layer layer-upper'/>
+      <div className='layer layer-middle'/>
+      <div className='layer layer-bottom'/>
+      <div>
+        <button>
+        post
+        </button>
+        <button>
+        post
+        </button>
+      </div>
+    </>
   );
 }
 
