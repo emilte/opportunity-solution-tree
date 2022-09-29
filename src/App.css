@@ -1,20 +1,10 @@
-.layer {
-  position: absolute;
-  height: 33.333vh;
-  width: 100vw;
-  z-index: -1;
+.app--spacer {
+  height: 15vh;
 }
 
-.layer-upper {
-  background: #b4d6ff;
-}
-
-.layer-middle {
-  top: 33.333vh;
-  background: #bbffbb;
-}
-
-.layer-bottom {
-  top: 66.666vh;
-  background: #ffc7c7;
+.app--tree_wrapper {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
 }

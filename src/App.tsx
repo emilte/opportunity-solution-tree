@@ -2,6 +2,9 @@ import { FieldSet, Record } from 'airtable';
 import { useEffect, useState } from 'react';
 import { getData } from './api';
 import './App.css';
+import { Background, RecursiveTree } from './Components';
+import { TreeRoot } from './Components/RecursiveTree/RecursiveTree';
+
 
 
 function App() {
@@ -12,30 +15,24 @@ function App() {
     getData().then((data)=>setData(data));
   }, []);
 
+  
   if (!data) {
     return <></>;
   }
   
-  const d = JSON.parse(data?.fields.data as string);
-  console.log(d);
-  
-  
-  
+  /** Parse json data to object. */
+  const d: TreeRoot = JSON.parse(data?.fields.data as string);
+
   return (
     <>
-      <div className='layer layer-upper'/>
-      <div className='layer layer-middle'/>
-      <div className='layer layer-bottom'/>
-      <div>
-        <button>
-        post
-        </button>
-        <button>
-        post
-        </button>
+      <Background/>
+      <div className='app--tree_wrapper'>
+        <RecursiveTree data={d}/>
       </div>
     </>
+    
   );
+  
 }
 
 export default App;
